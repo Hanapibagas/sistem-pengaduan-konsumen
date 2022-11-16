@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\DashbordController;
+use App\Http\Controllers\DataDiriController;
+use App\Http\Controllers\DiadukanController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TentangDiadukanController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,14 +19,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::resource('data-diri', DataDiriController::class);
+Route::resource('data-diadukan', DiadukanController::class);
+Route::resource('data-tentang-diadukan', TentangDiadukanController::class);
 
 Auth::routes();
 
-Route::prefix('dashboard')->group(function () {
+Route::prefix('dashboard')->middleware(['auth', 'administrator'])->group(function () {
     Route::get('/', [DashbordController::class, 'index'])->name('dashboard-index');
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
