@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TentangPenaduanRequest;
+use App\Models\TentangPengaduan;
 use Illuminate\Http\Request;
 
 class TentangDiadukanController extends Controller
@@ -32,9 +34,12 @@ class TentangDiadukanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TentangPenaduanRequest $request)
     {
-        //
+        $data = $request->all();
+        TentangPengaduan::create($data);
+
+        return redirect()->route('index')->with('status', 'Selamat data tentang yang anda adukan berhasil terkirim');
     }
 
     /**

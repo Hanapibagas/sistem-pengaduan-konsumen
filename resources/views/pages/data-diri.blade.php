@@ -52,7 +52,11 @@
                             </div>
                             <div class="form-group" style="color: black">
                                 <label for="jenis_kelamin">Jenis Kelamin <i class="text-danger" style="font-size: 14px;">*</i></label>
-                                <input type="text" class="form-control " name="jenis_kelamin" autocomplete="off">
+                                <select name="jenis_kelamin" required class="form-control">
+                                    <option value="Pilih Jenis Pengaduan">Jenis Kelamin</option>
+                                    <option value="Laki-Laki">Laki-Laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>
                             </div>
                             <div class="form-group" style="color: black">
                                 <label for="alamat">Alamat <i class="text-danger" style="font-size: 14px;">*</i></label>
@@ -64,7 +68,7 @@
                             </div>
                             <div class="form-group" style="color: black">
                                 <label for="bukti_diri">Bukti Diri <i class="text-danger" style="font-size: 14px;">*</i></label>
-                                <input type="text" class="form-control " name="bukti_diri" autocomplete="off">
+                                <input type="file" class="form-control " name="bukti_diri" autocomplete="off">
                             </div>>
                             <button type="submit" class="btn btn-success"> Selanjutnya </button>
                         </form>

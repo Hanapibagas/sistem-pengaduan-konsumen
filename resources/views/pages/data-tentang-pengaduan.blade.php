@@ -42,11 +42,11 @@
                 <div class="col-lg-12">
                     <div class="sol-img mt60"></div>
                     <div class="ree-blog-details">
-                        <form action="{{ route('data-diadukan.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('data-tentang-diadukan.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="nama_pemilik" style="color: black">Jenis Pengaduan <i class="text-danger" style="font-size: 14px;">*</i></label>
-                                <select name="nama_pemilik" required class="form-control">
+                                <label for="jenis_pengaduan" style="color: black">Jenis Pengaduan <i class="text-danger" style="font-size: 14px;">*</i></label>
+                                <select name="jenis_pengaduan" required class="form-control">
                                     <option value="Pilih Jenis Pengaduan">Pilih Jenis Pengaduan</option>
                                     <option value="Pertanian Dan Kehutanan">Pertanian Dan Kehutanan</option>
                                     <option value="Standar Mutu">Standar Mutu</option>
@@ -58,14 +58,14 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="perusahaan" style="color: black">Saat Kejadian <i class="text-danger" style="font-size: 14px;">*</i></label>
-                                <input type="date" class="form-control " name="perusahaan" autocomplete="off" autofocus=""><br>
-                                <input type="time" class="form-control " name="perusahaan" autocomplete="off" autofocus=""><br>
-                                <input type="text" class="form-control " placeholder="Tempat/lokasi" name="perusahaan" autocomplete="off" autofocus="">
+                                <label for="" style="color: black">Saat Kejadian <i class="text-danger" style="font-size: 14px;">*</i></label>
+                                <input type="date" class="form-control " name="tanggal" autocomplete="off" autofocus=""><br>
+                                <input type="time" class="form-control " name="jam" autocomplete="off" autofocus=""><br>
+                                <input type="text" class="form-control " placeholder="Tempat/lokasi" name="lokasi" autocomplete="off" autofocus="">
                             </div>
                             <div class="form-group" style="color: black">
-                                <label for="alamat">Bukti Pembelian <i class="text-danger" style="font-size: 14px;">*</i></label>
-                                <select name="nama_pemilik" required class="form-control">
+                                <label for="bukti_pembelian">Bukti Pembelian <i class="text-danger" style="font-size: 14px;">*</i></label>
+                                <select name="bukti_pembelian" required class="form-control">
                                     <option value="Pilih Jenis Bukti">Pilih Jenis Bukti</option>
                                     <option value="Bon Pembelian">Bon Pembelian</option>
                                     <option value="Kuitansi">Kuitansi</option>
@@ -76,16 +76,24 @@
                                 </select>
                             </div>
                             <div class="form-group" style="color: black">
-                                <label for="kode_pos">Bukti Saksi <i class="text-danger" style="font-size: 14px;">*</i></label>
-                                <select name="nama_pemilik" required class="form-control">
+                                <label for="bukti_saksi">Bukti Saksi <i class="text-danger" style="font-size: 14px;">*</i></label>
+                                <select name="bukti_saksi" required class="form-control">
                                     <option value="Apakah Anda Memiliki Bukti Saksi">Apakah Anda Memiliki Bukti Saksi</option>
                                     <option value="Ada, hubungan dengan saksi">Ada, hubungan dengan saksi</option>
                                     <option value="Tidak Ada">Tidak Ada</option>
                                 </select>
                             </div>
                             <div class="form-group" style="color: black">
-                                <label for="telepon">Barang Bukti <i class="text-danger" style="font-size: 14px;">*</i></label>
-                                <input type="number" class="form-control " name="telepon" autocomplete="off">
+                                <label for="barang_bukti">Barang Bukti <i class="text-danger" style="font-size: 14px;">*</i></label>
+                                <input type="text" class="form-control " placeholder="Link google drive" name="barang_bukti" autocomplete="off">
+                            </div>
+                            <div class="form-group" style="color: black">
+                                <label for="bentuk_kerugian">Bentuk Kerugian Yang diderita <i class="text-danger" style="font-size: 14px;">*</i></label>
+                                <select name="bentuk_kerugian" required class="form-control">
+                                    <option value="Bentuk kerugian anda">Bentuk kerugian anda </option>
+                                    <option value="Material">Material</option>
+                                    <option value="Phisik">Phisik</option>
+                                </select>
                             </div>
                             <button type="submit" class="btn btn-success"> Selanjutnya </button>
                         </form>

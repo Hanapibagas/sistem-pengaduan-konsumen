@@ -39,7 +39,7 @@ class DiadukanController extends Controller
         $data = $request->all();
         Diadukan::create($data);
 
-        return redirect()->route('data-tentang-diadukan.index')->with('status', 'Selamat data yang anda adukan berhasil terinput');
+        return redirect()->route('data-tentang-diadukan.index')->with('status', 'Selamat data yang anda adukan berhasil terkirim');
     }
 
     /**

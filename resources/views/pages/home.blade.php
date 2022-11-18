@@ -16,6 +16,7 @@
 <div class="feature">
     <div class="container">
       <div class="text-center">
+        <h2>Layanan</h2>
         <div class="col-md-3">
           <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <i class="fa fa-book"></i>

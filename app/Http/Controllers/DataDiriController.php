@@ -36,10 +36,20 @@ class DataDiriController extends Controller
      */
     public function store(DataDiriRequest $request)
     {
-        $data = $request->all();
-        Pengadu::create($data);
+        // $data = $request->all();
+        if ($request->file('bukti_diri')) {
+            $file = $request->file('bukti_diri')->store('gambar', 'public');
+        }
+        Pengadu::create([
+            "nama" => $request->input('nama'),
+            "umur" => $request->input('umur'),
+            "jenis_kelamin" => $request->input('jenis_kelamin'),
+            "alamat" => $request->input('alamat'),
+            "telepon" => $request->input('telepon'),
+            "bukti_diri" => $file,
+        ]);
 
-        return redirect()->route('data-diadukan.index')->with('status', 'Selamat data diri anda berhasil terinput');
+        return redirect()->route('data-diadukan.index')->with('status', 'Selamat data diri anda berhasil terkirim');
     }
 
     /**

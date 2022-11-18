@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="breadcrumb">
 			<li><a href="{{ route('index') }}">Beranda</a></li>
-			<li>Register</li>
+			<li>Login</li>
 		</div>
 	</div>
 </div>

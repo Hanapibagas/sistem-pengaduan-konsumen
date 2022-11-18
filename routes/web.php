@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\DashbordController;
+use App\Http\Controllers\Admin\DataDiriController as AdminDataDiriController;
+use App\Http\Controllers\Admin\DiadukanController as AdminDiadukanController;
+use App\Http\Controllers\Admin\LaporanController;
+use App\Http\Controllers\Admin\TentangDiadukanController as AdminTentangDiadukanController;
 use App\Http\Controllers\DataDiriController;
 use App\Http\Controllers\DiadukanController;
 use App\Http\Controllers\HomeController;
@@ -26,6 +30,11 @@ Route::resource('data-tentang-diadukan', TentangDiadukanController::class);
 
 Auth::routes();
 
-Route::prefix('dashboard')->middleware(['auth', 'administrator'])->group(function () {
+Route::prefix('dashboard')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', [DashbordController::class, 'index'])->name('dashboard-index');
+
+    Route::resource('pengaduan', AdminDataDiriController::class);
+    Route::resource('diadukan', AdminDiadukanController::class);
+    Route::resource('tentang', AdminTentangDiadukanController::class);
+    Route::resource('laporan', LaporanController::class);
 });
