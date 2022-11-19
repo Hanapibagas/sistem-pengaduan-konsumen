@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DataDiadukanRequest;
 use App\Models\Diadukan;
+use App\Models\Laporan;
 use Illuminate\Http\Request;
 
 class DiadukanController extends Controller
@@ -36,8 +37,21 @@ class DiadukanController extends Controller
      */
     public function store(DataDiadukanRequest $request)
     {
-        $data = $request->all();
-        Diadukan::create($data);
+        Diadukan::create([
+            "nama_pemilik" => $request->input('nama_pemilik'),
+            "perusahaan" => $request->input('perusahaan'),
+            "alamat" => $request->input('alamat'),
+            "kode_pos" => $request->input('kode_pos'),
+            "telepon" => $request->input('telepon'),
+            "faximile" => $request->input('faximile'),
+        ]);
+
+        // Laporan::create([
+        //     'diadukan_id' => $diadukan->id,
+        //     'pengadu_id' => $diadukan->id,
+        //     'diadukan_id' => $diadukan->id,
+        // ]);
+
 
         return redirect()->route('data-tentang-diadukan.index')->with('status', 'Selamat data yang anda adukan berhasil terkirim');
     }

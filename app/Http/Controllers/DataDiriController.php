@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\DataDiriRequest;
+use App\Models\Laporan;
 use App\Models\Pengadu;
 use Illuminate\Http\Request;
 
@@ -36,17 +37,22 @@ class DataDiriController extends Controller
      */
     public function store(DataDiriRequest $request)
     {
-        // $data = $request->all();
         if ($request->file('bukti_diri')) {
             $file = $request->file('bukti_diri')->store('gambar', 'public');
         }
-        Pengadu::create([
+        $pengadu = Pengadu::create([
             "nama" => $request->input('nama'),
             "umur" => $request->input('umur'),
             "jenis_kelamin" => $request->input('jenis_kelamin'),
             "alamat" => $request->input('alamat'),
             "telepon" => $request->input('telepon'),
             "bukti_diri" => $file,
+        ]);
+
+        Laporan::create([
+            'diadukan_id' => $pengadu->id,
+            'pengadu_id' => $pengadu->id,
+            'tentang_diadukan_id' => $pengadu->id,
         ]);
 
         return redirect()->route('data-diadukan.index')->with('status', 'Selamat data diri anda berhasil terkirim');

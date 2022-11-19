@@ -26,7 +26,7 @@
                             <th>Perusahaan Yang diadukan</th>
                             <th>Tanggal Diadukan</th>
                             <th>Status</th>
-                            {{-- <th>Aksi</th> --}}
+                            <th>Aksi</th>
                     </thead>
                     <tbody>
                         @forelse ( $items as $pengadu )
@@ -36,6 +36,11 @@
                             <th>{{ $pengadu->diadukan->perusahaan }}</th>
                             <th>{{ $pengadu->tentang_diadukan->tanggal }}</th>
                             <th>{{ $pengadu->status }}</th>
+                            <th>
+                                <a href="{{ route('laporan.show', $pengadu->id) }}" class="btn btn-info">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </th>
                         </tr>
                         @empty
                         <tr>

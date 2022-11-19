@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TentangPenaduanRequest;
+use App\Models\Laporan;
 use App\Models\TentangPengaduan;
 use Illuminate\Http\Request;
 
@@ -38,6 +39,10 @@ class TentangDiadukanController extends Controller
     {
         $data = $request->all();
         TentangPengaduan::create($data);
+
+        // Laporan::create([
+        //     'tentang_diadukan_id' => $tentangpengaduan->id,
+        // ]);
 
         return redirect()->route('index')->with('status', 'Selamat data tentang yang anda adukan berhasil terkirim');
     }

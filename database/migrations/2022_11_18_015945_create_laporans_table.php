@@ -16,7 +16,7 @@ class CreateLaporansTable extends Migration
         Schema::create('laporans', function (Blueprint $table) {
             $table->id();
             $table->integer('pengadu_id');
-            $table->integer('diadukan_id');
+            $table->integer('diadukan_id')->nullable();
             $table->integer('tentang_diadukan_id');
             $table->string('status')->default('Sedang Di Periksa');
             $table->timestamps();

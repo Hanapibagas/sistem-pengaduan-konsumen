@@ -37,4 +37,5 @@ Route::prefix('dashboard')->middleware(['auth', 'admin'])->group(function () {
     Route::resource('diadukan', AdminDiadukanController::class);
     Route::resource('tentang', AdminTentangDiadukanController::class);
     Route::resource('laporan', LaporanController::class);
+    // Route::resource('laporan', LaporanController::class);
 });
