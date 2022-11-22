@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\TentangDiadukanController as AdminTentangDiadukan
 use App\Http\Controllers\DataDiriController;
 use App\Http\Controllers\DiadukanController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InfoRegisterController;
+use App\Http\Controllers\StatusPengaduanController;
 use App\Http\Controllers\TentangDiadukanController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +29,9 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::resource('data-diri', DataDiriController::class);
 Route::resource('data-diadukan', DiadukanController::class);
 Route::resource('data-tentang-diadukan', TentangDiadukanController::class);
+Route::resource('info-register', InfoRegisterController::class);
+Route::resource('pantau-pengaduan', StatusPengaduanController::class);
+Route::get('info-pantauan', [StatusPengaduanController::class, 'guest'])->name('pantau-pengaduan.guest');
 
 Auth::routes();
 

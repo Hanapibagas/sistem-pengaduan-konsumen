@@ -23,18 +23,38 @@
             <a href="{{ route('register') }}"><h2>REGISTRASI</h2></a>
           </div>
         </div>
+        @guest
         <div class="col-md-3">
-          <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <i class="fa fa-laptop"></i>
-            <a href=""><h2>PANTAU STATUS PENGADUAN</h2></a>
+            <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+              <i class="fa fa-laptop"></i>
+              <a href="{{ route('pantau-pengaduan.guest') }}"><h2>PANTAU STATUS PENGADUAN</h2></a>
+            </div>
           </div>
-        </div>
+        @endguest
+        @auth
         <div class="col-md-3">
-          <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
-            <i class="fa fa-heart-o"></i>
-            <a href="{{ route('data-diri.index') }}"><h2>KIRIM PENGADUAN</h2></a>
+            <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+              <i class="fa fa-laptop"></i>
+              <a href="{{ route('pantau-pengaduan.index') }}"><h2>PANTAU STATUS PENGADUAN</h2></a>
+            </div>
           </div>
-        </div>
+        @endauth
+        @guest
+        <div class="col-md-3">
+            <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+              <i class="fa fa-heart-o"></i>
+              <a href="{{ route('info-register.index') }}"><h2>KIRIM PENGADUAN</h2></a>
+            </div>
+          </div>
+        @endguest
+        @auth
+        <div class="col-md-3">
+            <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+              <i class="fa fa-heart-o"></i>
+              <a href="{{ route('data-diri.index') }}"><h2>KIRIM PENGADUAN</h2></a>
+            </div>
+          </div>
+        @endauth
         <div class="col-md-3">
           <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
             <i class="fa fa-cloud"></i>

@@ -20,26 +20,6 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{ route('pengaduan.index') }}">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Daftar Pengadu</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="{{ route('diadukan.index') }}">
-            <i class="fas fa-fw fa-book"></i>
-            <span>Daftar Diadukan</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
         <a class="nav-link" href="{{ route('laporan.index') }}">
             <i class="fas fa-fw fa-tasks"></i>
             <span>Laporan Pengadu</span></a>

@@ -15,25 +15,6 @@
 
     @stack('add-style')
 
-    <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-              theme: {
-                extend: {
-                  colors: {
-                    clifford: '#da373d',
-                  }
-                }
-              }
-            }
-        </script>
-        <style type="text/tailwindcss">
-            @layer utilities {
-              .content-auto {
-                content-visibility: auto;
-              }
-            }
-        </style>
 
 </head>
 
