@@ -31,7 +31,7 @@ Route::resource('data-diadukan', DiadukanController::class);
 Route::resource('data-tentang-diadukan', TentangDiadukanController::class);
 Route::resource('info-register', InfoRegisterController::class);
 Route::resource('pantau-pengaduan', StatusPengaduanController::class);
-Route::get('info-pantauan', [StatusPengaduanController::class, 'guest'])->name('pantau-pengaduan.guest');
+Route::get('info-pantauan`', [StatusPengaduanController::class, 'guest'])->name('pantau-pengaduan.guest');
 
 Auth::routes();
 

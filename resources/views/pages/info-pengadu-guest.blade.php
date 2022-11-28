@@ -17,7 +17,7 @@
 <div class="container"><br><br><br>
     <div class="alert alert-success mt-3" role="alert">
         <h5 style="font-style: italic; color: red;">
-        Mohon maaf anda belum terdaftar silahkan melewati tahap registrasi dan anda dapat segera <strong><a href="http://127.0.0.1:8000/login">Login</a></strong> dengan akun yang sudah ada!
+        Mohon maaf anda belum terdaftar silahkan melewati tahap registrasi dan anda dapat segera <strong><a href="{{ route('login') }}">Login</a></strong> dengan akun yang sudah ada!
         </h5>
     </div><br><br><br>
 </div>
