@@ -10,6 +10,7 @@ class Laporan extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'pengadu_id',
         'diadukan_id',
         'tentang_diadukan_id',

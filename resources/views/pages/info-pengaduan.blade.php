@@ -12,7 +12,7 @@
 <div id="breadcrumb">
 	<div class="container">
 		<div class="breadcrumb">
-			<li><a href="{{ route('index') }}">Beranda</a></li>
+			<li><a href="{{ route('index') }}" style="color: whitesmoke">Beranda</a></li>
 			<li>Laporan Pengadu</li>
 		</div>
 	</div>

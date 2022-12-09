@@ -7,3 +7,4 @@
     <script src="{{ asset('frontend/js/jquery.isotope.min.js') }}"></script>
     <script src="{{ asset('frontend/js/wow.min.js') }}"></script>
     <script src="{{ asset('frontend/js/functions.js') }}"></script>
+    <script src="{{ asset('frontend/js/scripts.js') }}"></script>

@@ -8,9 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BPSK | @yield('title')</title>
 
+    <link rel="icon" href="{{ asset('frontend/images/logo.png') }}" type="image/x-icon">
+
     @include('includes.style')
 
-    @stack('add-style')
+    @stack('add-styleFe')
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -27,8 +29,8 @@
 
 
     @include('includes.script')
-
     @stack('add-script')
+
 
 </body>
 

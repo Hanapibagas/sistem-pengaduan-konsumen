@@ -20,6 +20,16 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
+        <a class="nav-link" href="{{ route('blog.index') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Blog</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
         <a class="nav-link" href="{{ route('laporan.index') }}">
             <i class="fas fa-fw fa-tasks"></i>
             <span>Laporan Pengadu</span></a>
