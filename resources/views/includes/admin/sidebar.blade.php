@@ -10,7 +10,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{ route('dashboard-index') }}">
+        {{-- <a class="nav-link" href="{{ route('dashboard-index') }}"> --}}
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -20,7 +20,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{ route('blog.index') }}">
+        {{-- <a class="nav-link" href="{{ route('blo.index') }}"> --}}
             <i class="fas fa-fw fa-folder"></i>
             <span>Blog</span></a>
     </li>
@@ -30,7 +30,17 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{ route('laporan.index') }}">
+        {{-- <a class="nav-link" href="{{ route('pertannyaan-admin-index') }}"> --}}
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Pertanyaan</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        {{-- <a class="nav-link" href="{{ route('laporan.index') }}"> --}}
             <i class="fas fa-fw fa-tasks"></i>
             <span>Laporan Pengadu</span></a>
     </li>

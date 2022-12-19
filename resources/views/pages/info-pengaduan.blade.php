@@ -13,7 +13,7 @@
 	<div class="container">
 		<div class="breadcrumb">
 			<li><a href="{{ route('index') }}" style="color: whitesmoke">Beranda</a></li>
-			<li>Laporan Pengadu</li>
+			<li>Form pengaduan</li>
 		</div>
 	</div>
 </div><br>
@@ -40,9 +40,9 @@
                         @forelse ( $items as $pengadu )
                         <tr>
                             <th style="color: black">{{ $pengadu->id }}</th>
-                            <th style="color: black">{{ $pengadu->pengadu->nama }}</th>
-                            <th style="color: black">{{ $pengadu->diadukan->perusahaan }}</th>
-                            <th style="color: black">{{ $pengadu->tentang_diadukan->tanggal }}</th>
+                            <th style="color: black">{{ $pengadu->pengadu->nama_lengkap }}</th>
+                            <th style="color: black">{{ $pengadu->diadukan->nama_pelaku_usaha }}</th>
+                            <th style="color: black">{{ $pengadu->tentang_diadukan->created_at }}</th>
                             <th style="color: black">{{ $pengadu->status }}</th>
                         </tr>
                         @empty

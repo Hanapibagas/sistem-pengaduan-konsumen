@@ -18,19 +18,23 @@
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation"><a href="{{ route('index') }}">Beranda</a></li>
                 <li role="presentation"><a href="{{ route('profile.index') }}">Profil</a></li>
-                <li role="presentation"><a href="{{ route('blog.index') }}">Blog</a></li>
+                <li role="presentation"><a href="{{ route('berita.index') }}">Berita</a></li>
                 <li role="presentation"><a href="about.html">Kebijakan</a></li>
-                <li role="presentation"><a href="about.html">Tata Cara Pengaduan</a></li>
+                <li role="presentation"><a href="{{ route('tata-cara-pengaduan.index') }}">Tata Cara Pengaduan</a></li>
                 @guest
-                <li role="presentation"><a href="{{ route('info-register.index') }}">Pengaduan</a></li>
+                <li role="presentation"><a href="{{ route('informasi-registrasi.index') }}">Pengaduan</a></li>
                 @endguest
+
                 @auth
-                <li role="presentation"><a href="{{ route('data-diri.index') }}">Pengaduan</a></li>
+                <li role="presentation"><a href="{{ route('kirim-pengadu') }}">Pengaduan</a></li>
                 @endauth
+
                 <li role="presentation"><a href="contact.html">Kontak</a></li>
+
                 @guest
                 <li role="presentation"><a href="{{ route('login') }}">Login</a></li>
                 @endguest
+
                 @auth
                 <li>
                     <form class="form-inline d-sm-block d-md-none" action="{{ route('logout') }}" method="POST">
@@ -42,6 +46,7 @@
                     </form>
                 </li>
                 @endauth
+
             </ul>
           </div>
         </div>

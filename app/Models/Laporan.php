@@ -19,16 +19,16 @@ class Laporan extends Model
 
     public function pengadu()
     {
-        return $this->belongsTo(Pengadu::class, 'pengadu_id', 'id');
+        return $this->belongsTo(IdentitasKonsumen::class, 'pengadu_id', 'id');
     }
 
     public function diadukan()
     {
-        return $this->belongsTo(Diadukan::class, 'diadukan_id', 'id');
+        return $this->belongsTo(IdentitasPelakuUsaha::class, 'diadukan_id', 'id');
     }
 
     public function tentang_diadukan()
     {
-        return $this->belongsTo(TentangPengaduan::class, 'tentang_diadukan_id', 'id');
+        return $this->belongsTo(TentangPengadu::class, 'tentang_diadukan_id', 'id');
     }
 }

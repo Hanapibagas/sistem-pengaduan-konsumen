@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 :root{
-	--primary: #0D3245;
+	--primary: #6366f1;
 	--secondary: #bfc0c0;
 	--white: #fff;
 	--text-clr: #5b6475;
 	--header-clr: #25273d;
-	--next-btn-hover: #0D3245;
+	--next-btn-hover: #6366f1;
 	--back-btn-hover: #8b8c8c;
 }
 
