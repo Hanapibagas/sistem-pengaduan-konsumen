@@ -19,6 +19,8 @@ class CreateLaporansTable extends Migration
             $table->foreignId('pengadu_id');
             $table->foreignId('diadukan_id');
             $table->foreignId('tentang_diadukan_id');
+            $table->foreignId('kronologis_id');
+            $table->foreignId('jenis_tuntutan_id');
             $table->string('status')->default('Sedang Di Proses');
             $table->timestamps();
         });

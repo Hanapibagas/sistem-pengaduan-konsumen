@@ -13,6 +13,8 @@ class Laporan extends Model
         'user_id',
         'pengadu_id',
         'diadukan_id',
+        'kronologis_id',
+        'jenis_tuntutan_id',
         'tentang_diadukan_id',
         'status'
     ];
@@ -30,5 +32,15 @@ class Laporan extends Model
     public function tentang_diadukan()
     {
         return $this->belongsTo(TentangPengadu::class, 'tentang_diadukan_id', 'id');
+    }
+
+    public function kronologis()
+    {
+        return $this->belongsTo(Kronologis::class, 'kronologis_id', 'id');
+    }
+
+    public function jenis_tuntutan()
+    {
+        return $this->belongsTo(JenisTutan::class, 'jenis_tuntutan_id', 'id');
     }
 }

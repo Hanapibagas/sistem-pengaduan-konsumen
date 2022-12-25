@@ -32,7 +32,7 @@ class KirimPengaduController extends Controller
     {
         // dd($request->all());
         if ($request->file('bukti_pembelian')) {
-            $file = $request->file('bukti_pembelian')->store('gambar', 'public');
+            $file = $request->file('bukti_pembelian')->store('tentang-pengadu', 'public');
         }
 
         $tentangpengadu = TentangPengadu::create([
@@ -69,11 +69,11 @@ class KirimPengaduController extends Controller
             "telepon" => $request->input('telepon'),
         ]);
 
-        JenisTutan::create([
+        $jenistuntuta = JenisTutan::create([
             "jenis_tuntutan" => $request->input('jenis_tuntutan'),
         ]);
 
-        Kronologis::create([
+        $kronologis = Kronologis::create([
             "kronologis" => $request->input('kronologis'),
         ]);
 
@@ -81,6 +81,8 @@ class KirimPengaduController extends Controller
             'user_id' => Auth::user()->id,
             'diadukan_id' => $pengadu->id,
             'pengadu_id' => $diadukan->id,
+            'kronologis_id' => $jenistuntuta->id,
+            'jenis_tuntutan_id' => $kronologis->id,
             'tentang_diadukan_id' => $tentangpengadu->id,
         ]);
 

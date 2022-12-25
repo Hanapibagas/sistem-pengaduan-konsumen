@@ -30,7 +30,7 @@
 <div class="container">
     <h1 style="text-align: center">
         <a href="{{ route('kirim-pengadu') }}">Pengaduan</a> /
-        <a href="{{ route('kirim-informasi') }}">Informasi</a>
+        <a style="color: #99b8c4" href="{{ route('kirim-informasi') }}">Informasi</a>
     </h1>
 </div>
 
@@ -53,7 +53,7 @@
                             <h3 class="panel-title">Formulir Isi Infromasi Pengaduan</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="form_post" action="""" method="POST">
+                            <form id="form_post" action="" method="POST">
                                 @csrf
                                 <div id="message"></div>
 

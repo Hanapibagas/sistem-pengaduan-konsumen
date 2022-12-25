@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BeritaAdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
@@ -47,4 +48,5 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::prefix('dashboard')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard-index');
+    Route::resource('berita-admin', BeritaAdminController::class);
 });

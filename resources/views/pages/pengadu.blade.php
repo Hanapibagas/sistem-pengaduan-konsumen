@@ -29,7 +29,7 @@
 @endif
 <div class="container">
     <h1 style="text-align: center">
-        <a href="{{ route('kirim-pengadu') }}">Pengaduan</a> /
+        <a style="color: #99b8c4" href="{{ route('kirim-pengadu') }}">Pengaduan</a> /
         <a href="{{ route('kirim-informasi') }}">Informasi</a>
     </h1>
 </div>
@@ -233,7 +233,7 @@
                                             <div class="form-group col-md-12 col-sm-12">
                                                 <label for="bukti_pembelian" class="col-md-4 col-sm-4">Bukti Pembelian</label>
                                                 <div class="col-md-8 col-sm-8">
-                                                    <input type="file" class="form-control input-sm" name="bukti_pembelian" autocomplete="off">
+                                                    <input type="file" class="form-control input-sm" name="bukti_pembelian">
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
