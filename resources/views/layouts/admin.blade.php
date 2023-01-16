@@ -9,9 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin BPSK | @yield('title')</title>
+    <title>Admin | @yield('title')</title>
 
     @include('includes.admin.style')
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 
     @stack('add-style')
 

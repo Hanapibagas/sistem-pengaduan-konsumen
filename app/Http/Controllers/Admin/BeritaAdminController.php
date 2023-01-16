@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class BeritaAdminController extends Controller
 {
@@ -23,12 +24,15 @@ class BeritaAdminController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         if ($request->file('gambar')) {
             $file = $request->file('gambar')->store('berita', 'public');
         }
 
+        $slug = Str::slug($request->title);
         Berita::create([
             "title" => $request->input('title'),
+            "slug" => $slug,
             "tanggal" => $request->input('tanggal'),
             "deskripsi" => $request->input('deskripsi'),
             "gambar" => $file
@@ -60,8 +64,10 @@ class BeritaAdminController extends Controller
             $file = $berita->gambar;
         }
 
+        $slug = Str::slug($request->title);
         $berita->update([
             "title" => $request->input('title'),
+            "slug" => $slug,
             "tanggal" => $request->input('tanggal'),
             "deskripsi" => $request->input('deskripsi'),
             "gambar" => $file

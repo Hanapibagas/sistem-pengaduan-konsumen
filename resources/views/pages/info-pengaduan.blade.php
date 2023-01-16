@@ -13,14 +13,14 @@
 	<div class="container">
 		<div class="breadcrumb">
 			<li><a href="{{ route('index') }}" style="color: whitesmoke">Beranda</a></li>
-			<li>Form pengaduan</li>
+			<li>Form pantau pengaduan</li>
 		</div>
 	</div>
 </div><br>
 
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 style="color: black"  class="h3 mb-0 text-gray-800">
+        <h1 style="color: blac; margin-top: -10px"  class="h3 mb-0 text-gray-800">
             Laporan Pengadu
         </h1><br>
     </div>
@@ -30,20 +30,20 @@
                 <table id="myTable" class="table table-stripped">
                     <thead>
                         <tr>
-                            <th style="color: black">ID</th>
-                            <th style="color: black">Nama Pengadu</th>
-                            <th style="color: black">Perusahaan Yang diadukan</th>
-                            <th style="color: black">Tanggal Diadukan</th>
-                            <th style="color: black">Status</th>
+                            <th style="color: black; text-align: center">Nama Pengadu</th>
+                            <th style="color: black; text-align: center">Perusahaan Yang diadukan</th>
+                            <th style="color: black; text-align: center">Tanggal Diadukan</th>
+                            <th style="color: black; text-align: center">Keterangan</th>
+                            <th style="color: black; text-align: center">Status</th>
                     </thead>
                     <tbody>
-                        @forelse ( $items as $pengadu )
+                        @forelse ( $pantaulaporan as $pengadu )
                         <tr>
-                            <th style="color: black">{{ $pengadu->id }}</th>
-                            <th style="color: black">{{ $pengadu->pengadu->nama_lengkap }}</th>
-                            <th style="color: black">{{ $pengadu->diadukan->nama_pelaku_usaha }}</th>
-                            <th style="color: black">{{ $pengadu->tentang_diadukan->created_at }}</th>
-                            <th style="color: black">{{ $pengadu->status }}</th>
+                            <th style="color: black; text-align: center">{{ $pengadu->pengadu->nama_lengkap }}</th>
+                            <th style="color: black; text-align: center">{{ $pengadu->diadukan->nama_pelaku_usaha }}</th>
+                            <th style="color: black; text-align: center">{{ $pengadu->tentang_diadukan->created_at }}</th>
+                            <th style="color: black; text-align: center">{{ $pengadu->status }}</th>
+                            <th style="color: black; text-align: center">{!! $pengadu->keterangan !!}</th>
                         </tr>
                         @empty
                         <tr>
@@ -57,7 +57,7 @@
             </div>
         </div>
     </div>
-</div>
+</div><br>
 @endsection
 
 @push('add-script')

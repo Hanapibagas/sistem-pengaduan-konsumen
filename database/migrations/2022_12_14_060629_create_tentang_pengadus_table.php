@@ -25,9 +25,9 @@ class CreateTentangPengadusTable extends Migration
             $table->string('lokasi');
             $table->string('bukti_bukti');
             $table->string('bukti_pembelian');
-            $table->string('material');
-            $table->string('fisik');
-            $table->string('psikis');
+            $table->string('material')->nullable();
+            $table->string('fisik')->nullable();
+            $table->string('psikis')->nullable();
             $table->timestamps();
         });
     }

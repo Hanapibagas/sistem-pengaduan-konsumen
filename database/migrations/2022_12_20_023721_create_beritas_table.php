@@ -16,6 +16,7 @@ class CreateBeritasTable extends Migration
         Schema::create('beritas', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug');
             $table->date('tanggal');
             $table->longText('deskripsi');
             $table->text('gambar');

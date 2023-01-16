@@ -23,11 +23,6 @@ class KirimPengaduController extends Controller
         return view('pages.pengadu');
     }
 
-    public function kiriminformasi()
-    {
-        return view('pages.kirim-informasi');
-    }
-
     public function store(Request $request)
     {
         // dd($request->all());
@@ -86,6 +81,6 @@ class KirimPengaduController extends Controller
             'tentang_diadukan_id' => $tentangpengadu->id,
         ]);
 
-        return redirect()->route('kirim-pengadu')->with('status', 'Selamat data diri anda berhasil terkirim');
+        return redirect()->route('kirim-pengadu')->with('status', 'Selamat data pengaduan anda telah berhasil terkirim');
     }
 }

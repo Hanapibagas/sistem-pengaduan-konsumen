@@ -1,0 +1,25 @@
+.container {
+    width: auto;
+    height: auto;
+    /* position: absolute; */
+    border: 1px solid;
+}
+
+.table{
+    /* text-align: center; */
+    margin-left: 10%;
+}
+
+.judul {
+    margin-top: 0px;
+}
+
+
+.footer{
+    display: flex;
+    margin-left: 25%;
+}
+
+.footerpetugas {
+    margin-left: 50%;
+}

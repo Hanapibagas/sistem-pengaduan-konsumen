@@ -53,7 +53,7 @@
                             <h3 class="panel-title">Formulir Isi Infromasi Pengaduan</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="form_post" action="" method="POST">
+                            <form id="form_post" action="{{ route('kirim-informasi-admin') }}" method="POST">
                                 @csrf
                                 <div id="message"></div>
 
@@ -64,7 +64,7 @@
                                         </div>
                                         <div class="panel-body" style="padding-left: 0;padding-right: 0;">
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <textarea name="kronologis" type="text" rows="4" class="form-control input-sm" id="masalah_dilaporkan" placeholder=""></textarea>
+                                                <textarea name="informasi_pengaduan" type="text" rows="4" class="form-control input-sm" id="masalah_dilaporkan" placeholder=""></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -87,5 +87,9 @@
 @endsection
 
 @push('add-script')
+<script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('informasi_pengaduan');
+    </script>
     <script src="{{ asset('frontend/js/scripts.js') }}"></script>
 @endpush

@@ -16,8 +16,14 @@ class Laporan extends Model
         'kronologis_id',
         'jenis_tuntutan_id',
         'tentang_diadukan_id',
-        'status'
+        'status',
+        'keterangan',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 
     public function pengadu()
     {

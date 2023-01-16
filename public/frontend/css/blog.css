@@ -73,6 +73,9 @@ body{
     font-weight: 500;
     color: #272727;
 }
+.blog-title{
+    height: 150px;
+}
 .blog-text .blog-title:hover{
     color: #0D3245;
     transition: all ease 0.3s;
@@ -96,5 +99,11 @@ body{
     }
     #blog{
         padding: 20px;
+        display: block;
+    }
+    .blog-title{
+        opacity: 0.1%;
+        height: 20px;
+
     }
 }
