@@ -24,7 +24,7 @@
 
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('survei-index') }}">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-fw fa-question"></i>
             <span>Pertanyaan</span></a>
     </li>
 
@@ -36,13 +36,14 @@
             <span>Data Laporan</span></a>
     </li>
 
+    {{--
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('pengguna-akun') }}">
             <i class="fas fa-fw fa-user"></i>
             <span>Akun pengguna</span></a>
-    </li>
+    </li> --}}
 
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

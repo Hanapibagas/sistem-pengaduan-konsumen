@@ -7,6 +7,7 @@ use App\Models\IdentitasPelakuUsaha;
 use App\Models\JenisTutan;
 use App\Models\Kronologis;
 use App\Models\Laporan;
+use App\Models\PermintaanKonsumen;
 use App\Models\TentangPengadu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -72,6 +73,10 @@ class KirimPengaduController extends Controller
             "kronologis" => $request->input('kronologis'),
         ]);
 
+        $permintaankonsumen = PermintaanKonsumen::create([
+            "permintaan" => $request->input('permintaan')
+        ]);
+
         Laporan::create([
             'user_id' => Auth::user()->id,
             'diadukan_id' => $pengadu->id,
@@ -79,6 +84,7 @@ class KirimPengaduController extends Controller
             'kronologis_id' => $jenistuntuta->id,
             'jenis_tuntutan_id' => $kronologis->id,
             'tentang_diadukan_id' => $tentangpengadu->id,
+            'permintaan_id' => $permintaankonsumen->id,
         ]);
 
         return redirect()->route('kirim-pengadu')->with('status', 'Selamat data pengaduan anda telah berhasil terkirim');

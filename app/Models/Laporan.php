@@ -16,9 +16,15 @@ class Laporan extends Model
         'kronologis_id',
         'jenis_tuntutan_id',
         'tentang_diadukan_id',
+        'permintaan_id',
         'status',
         'keterangan',
     ];
+
+    public function permintaan()
+    {
+        return $this->belongsTo(PermintaanKonsumen::class, 'permintaan_id', 'id');
+    }
 
     public function user()
     {

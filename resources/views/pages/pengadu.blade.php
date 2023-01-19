@@ -348,6 +348,22 @@ Data Diri
                                     </div>
                                 </div>
 
+                                <div class="col-md-12 col-sm-12" style="margin-top: 10px">
+                                    <div class="panel panel-default" style="border-color: #99b8c4;">
+                                        <div class="panel-heading"
+                                            style="background-color: transparent; line-height: 1em;">
+                                            <h5>VI. PERMINTAAN KONSUMEN</h5><br>
+                                        </div>
+                                        <div class="panel-body" style="padding-left: 0;padding-right: 0;">
+                                            <div class="form-group col-md-12 col-sm-12">
+                                                <textarea name="permintaan" type="text" rows="4"
+                                                    class="form-control input-sm" id="masalah_dilaporkan"
+                                                    placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="col-md-6 col-sm-6" style="margin-top: 10px">
                                     <div class="col-md-12 col-sm-12" style="margin-top: 10px">
                                         <button style="margin-left: -15px" type="submit"

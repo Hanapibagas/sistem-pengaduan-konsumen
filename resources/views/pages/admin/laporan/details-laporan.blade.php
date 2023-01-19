@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Detail Laporan
+Detail Laporan
 @endsection
 
 @section('content')
@@ -12,9 +12,11 @@
                 <div class="iq-card-body">
                     <div class="text-center">
                         <h4 class="mb-3">DETAIL DATA PELAPORAN</h4>
-                            <span style="float: right;"><a href="{{ route('data-laporan-pengaduan') }}" class="btn btn-sm btn-primary"><i class="fa fa-undo"></i>  kembali</a></span><br>
+                        <span style="float: right;"><a href="{{ route('data-laporan-pengaduan') }}"
+                                class="btn btn-sm btn-primary"><i class="fa fa-undo"></i> kembali</a></span><br>
                     </div>
-                    <form action="{{ route('update-data-laporan-pengaduan', $laporanpengaduan->id) }}" method="post"  enctype="multipart/form-data">
+                    <form action="{{ route('update-data-laporan-pengaduan', $laporanpengaduan->id) }}" method="post"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="mb-5">
@@ -37,16 +39,19 @@
                             <b>JENIS PRODUK :</b><i>{{ $laporanpengaduan->tentang_diadukan->jenis_produk }}</i><br>
                             <b>MEREK DAGANG :</b><i>{{ $laporanpengaduan->tentang_diadukan->merek_dagang }}</i> <br>
                             <b>TYPE :</b> <i>{{ $laporanpengaduan->tentang_diadukan->type }}</i> <br>
-                            <b>JENIS PENGADUAN :</b> <i>{{ $laporanpengaduan->tentang_diadukan->jenis_pengaduan }}</i> <br>
+                            <b>JENIS PENGADUAN :</b> <i>{{ $laporanpengaduan->tentang_diadukan->jenis_pengaduan }}</i>
+                            <br>
                             <b>SAKSI :</b> <i>{{ $laporanpengaduan->tentang_diadukan->saksi }}</i> <br>
                             <b>TANGGAL :</b> <i>{{ $laporanpengaduan->tentang_diadukan->tanggal }}</i> <br>
                             <b>JAM :</b> <i>{{ $laporanpengaduan->tentang_diadukan->jam }}</i> <br>
                             <b>LOKASI :</b> <i>{{ $laporanpengaduan->tentang_diadukan->lokasi }}</i> <br>
-                            <b>BUKTI-BUTI :</b> <a href="{{ $laporanpengaduan->tentang_diadukan->bukti_bukti }}"><i>{{ $laporanpengaduan->tentang_diadukan->bukti_bukti }}</i></a> <br>
-                            <b>BUKTI PEMBELIAN :</b> <br> <img width="50%" height="40%" src="{{ asset ('storage/'.$laporanpengaduan->tentang_diadukan->bukti_pembelian) }}" alt="fesfh"><br> <br>
+                            <b>BUKTI-BUTI :</b> <a href="{{ $laporanpengaduan->tentang_diadukan->bukti_bukti }}"><i>{{
+                                    $laporanpengaduan->tentang_diadukan->bukti_bukti }}</i></a> <br>
+                            <b>BUKTI PEMBELIAN :</b> <br> <img width="50%" height="40%"
+                                src="{{ asset ('storage/'.$laporanpengaduan->tentang_diadukan->bukti_pembelian) }}"
+                                alt="fesfh"><br> <br>
                             <b>MATERIAL :</b> {{ $laporanpengaduan->tentang_diadukan->material }} <br>
                             <b>FISIK :</b> <i>{{ $laporanpengaduan->tentang_diadukan->fisik }}</i> <br>
-                            <b>PSIKIS :</b> <i>{{ $laporanpengaduan->tentang_diadukan->psikis }}</i> <br>
                         </div>
                         <div style="margin-top: -20px" class="mb-5">
                             <b>KRONOLOGIS :</b><i>{{ $laporanpengaduan->jenis_tuntutan->jenis_tuntutan }}</i><br>
@@ -54,25 +59,34 @@
                         <div style="margin-top: -20px" class="mb-5">
                             <b>JENIS TUNTUTAN :</b><i>{{ $laporanpengaduan->kronologis->kronologis }}</i><br>
                         </div>
+                        <div style="margin-top: -20px" class="mb-5">
+                            <b>PERMINTAAN KONSUMEN :</b><i>{{ $laporanpengaduan->permintaan->permintaan }}</i><br>
+                        </div>
                         <div style="margin-top: -20px" class="form-group">
                             <b for="status">STATUS</b>
                             <select name="status" id="mySelect" name="randomName" required class="form-control">
                                 <option value="{{ $laporanpengaduan->status }}">
                                     <i>Jangan Ubah ({{ $laporanpengaduan->status }})</i>
                                 </option>
-                                <option value="Di Terima">Di Terima</option>
-                                <option value="Di Tolak">Di Tolak</option>
-                                <option value="Sedang Di Periksa">Sedang Di Periksa</option>
+                                <option value="DiTerima">DiTerima</option>
+                                <option value="DiTolak">DiTolak</option>
+                                <option value="Sedang Di Periksa">Sedang Diproses</option>
                             </select>
                         </div>
-                        <div  class="form-group" id="option2Input" style="display: none;">
+                        <div class="form-group" id="option2Input" style="display: none;">
                             <label for="keterangan"><b>KETERANGAN</b></label>
-                            <textarea name="keterangan" class="blok w-full">{{ $laporanpengaduan->keterangan }}</textarea>
+                            <textarea name="keterangan"
+                                class="blok w-full">{{ $laporanpengaduan->keterangan }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-fw fa-check"></i>
                             Kirim
                         </button>
-                        <a href="{{ route('cetak-pdf-laporan-pengaduan', $laporanpengaduan->id) }}" target="_blank" class="btn btn-danger btn-block">Print PDF</a>
+                        <a href="{{ route('cetak-pdf-laporan-pengaduan', $laporanpengaduan->id) }}" target="_blank"
+                            class="btn btn-danger btn-block">
+                            <i class="fas fa-fw fa-print"></i>
+                            Print PDF
+                        </a>
                     </form>
                 </div>
             </div>
@@ -93,11 +107,11 @@
 
       var selectedValue = this.value;
 
-      if (selectedValue === 'Di Tolak') {
+      if (selectedValue === 'DiTolak') {
         document.getElementById('option2Input').style.display = 'block';
       } else {
         document.getElementById('option2Input').style.display = 'none';
       }
     });
-  </script>
+</script>
 @endpush

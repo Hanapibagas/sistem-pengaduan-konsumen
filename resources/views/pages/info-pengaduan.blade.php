@@ -1,26 +1,26 @@
 @extends('layouts.app')
 
 @section('title')
-    Data Diri
+Data Diri
 @endsection
 
 @push('add-style')
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.13.1/datatables.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.13.1/datatables.min.css" />
 @endpush
 
 @section('content')
 <div id="breadcrumb">
-	<div class="container">
-		<div class="breadcrumb">
-			<li><a href="{{ route('index') }}" style="color: whitesmoke">Beranda</a></li>
-			<li>Form pantau pengaduan</li>
-		</div>
-	</div>
+    <div class="container">
+        <div class="breadcrumb">
+            <li><a href="{{ route('index') }}" style="color: whitesmoke">Beranda</a></li>
+            <li>Form pantau pengaduan</li>
+        </div>
+    </div>
 </div><br>
 
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 style="color: blac; margin-top: -10px"  class="h3 mb-0 text-gray-800">
+        <h1 style="color: blac; margin-top: -10px" class="h3 mb-0 text-gray-800">
             Laporan Pengadu
         </h1><br>
     </div>
@@ -40,8 +40,10 @@
                         @forelse ( $pantaulaporan as $pengadu )
                         <tr>
                             <th style="color: black; text-align: center">{{ $pengadu->pengadu->nama_lengkap }}</th>
-                            <th style="color: black; text-align: center">{{ $pengadu->diadukan->nama_pelaku_usaha }}</th>
-                            <th style="color: black; text-align: center">{{ $pengadu->tentang_diadukan->created_at }}</th>
+                            <th style="color: black; text-align: center">{{ $pengadu->diadukan->perusahaan }}
+                            </th>
+                            <th style="color: black; text-align: center">{{ $pengadu->tentang_diadukan->created_at }}
+                            </th>
                             <th style="color: black; text-align: center">{{ $pengadu->status }}</th>
                             <th style="color: black; text-align: center">{!! $pengadu->keterangan !!}</th>
                         </tr>
