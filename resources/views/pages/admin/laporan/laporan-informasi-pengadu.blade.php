@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('title')
-    Daftar Infromasi Pengadu
+Daftar Infromasi Pengadu
 @endsection
 
 @push('add-style')
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.13.1/datatables.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.13.1/datatables.min.css" />
 @endpush
 
 @section('content')
@@ -26,7 +26,7 @@
                             <th>Informasi</th>
                     </thead>
                     <tbody>
-                        @forelse ( $informasipegaduan as $file )
+                        @foreach ( $informasipegaduan as $file )
                         <tr>
                             <th>{{ $file->id }}</th>
                             <th>{{ $file->User->name }}</th>
@@ -37,13 +37,7 @@
                                 </a>
                             </th> --}}
                         </tr>
-                        @empty
-                        <tr>
-                            <th class="text-center" colspan="7">
-                                Data Kosong
-                            </th>
-                        </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>

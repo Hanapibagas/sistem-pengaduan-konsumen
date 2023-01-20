@@ -17,7 +17,7 @@ Daftar Laporan Pengaduan
             </h1>
         </div>
 
-        <small><i>*fitur untuk cetak laporan</i></small>
+        <small><i>*fitur untuk filter laporan</i></small>
         <form action="{{ route('cari-data-laporan-pengaduan') }}" method="POST">
             <div class="row">
                 @csrf

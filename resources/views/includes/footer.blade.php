@@ -18,7 +18,7 @@
 
             <div class="col-md-4 col-md-offset-4">
                 <div class="copyright" style="color: whitesmoke">
-                    Copyright &copy; 2022
+                    Copyright &copy; PT.Liny Jaya Informatika 2023
                 </div>
             </div>
         </div>

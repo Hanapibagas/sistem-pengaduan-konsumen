@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('title')
-    Berita
+Berita
 @endsection
 
 @push('add-style')
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.13.1/datatables.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.13.1/datatables.min.css" />
 @endpush
 
 @section('content')
@@ -30,33 +30,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ( $berita as $files )
+                        @foreach ( $berita as $files )
                         <tr>
                             <th>{{ $files->title }}</th>
                             <th>{{ $files->tanggal }}</th>
                             <th>
-                                <img src="{{ Storage::url($files->gambar) }}" alt="" style="width: 150px" class="img-thumbnail">
+                                <img src="{{ Storage::url($files->gambar) }}" alt="" style="width: 150px"
+                                    class="img-thumbnail">
                             </th>
                             <th>
                                 <a href="{{ route('berita-admin.edit', $files->id) }}" class="btn btn-info">
                                     <i class="fa fa-pencil-alt"></i>
                                 </a>
-                                <form action="{{ route('berita-admin.destroy', $files->id) }}" method="POST" class="d-inline">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger">
-                                    <i class="fa fa-trash"></i>
-                                </button>
+                                <form action="{{ route('berita-admin.destroy', $files->id) }}" method="POST"
+                                    class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
                                 </form>
                             </th>
                         </tr>
-                        @empty
-                        <tr>
-                            <th class="text-center" colspan="7">
-                                Data Kosong
-                            </th>
-                        </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>
