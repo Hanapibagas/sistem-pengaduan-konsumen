@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\InformasiPengaduan;
 use App\Models\Laporan;
 use App\Models\TentangPengadu;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendEmail;
 use PDF;
 use Illuminate\Http\Request;
 
@@ -39,13 +41,22 @@ class LaporanAdminController extends Controller
 
     public function updatejawabanpengaduan(Request $request, $id)
     {
-        $data = Laporan::where('id', $id)->first();
+        $data = Laporan::with('pengadu')->where('id', $id)->first();
 
-        $data->update([
-            "status" => $request->input('status'),
-            "keterangan" => $request->input('keterangan'),
-        ]);
-
+        if (
+            $request->input('status') == 'DiTerima'
+        ) {
+            $data->update([
+                "status" => $request->input('status'),
+            ]);
+            Mail::to($data->pengadu->email)->send(new SendEmail($request->status, "Pengaduan diterima!!"));
+        } else {
+            $data->update([
+                "status" => $request->input('status'),
+                "keterangan" => $request->input('keterangan'),
+            ]);
+            Mail::to($data->pengadu->email)->send(new SendEmail($request->status, $request->keterangan));
+        }
         return redirect()->route('data-laporan-pengaduan');
     }
 
@@ -80,9 +91,6 @@ class LaporanAdminController extends Controller
             $query->whereMonth('tanggal', $bulan) && $query->whereYear('tanggal', $tahun);
         })->get();
 
-        // $laporanpengaduan = Laporan::with(['pengadu', 'diadukan', 'tentang_diadukan', 'kronologis', 'jenis_tuntutan'])->where('');
-
-        // return response()->json($request->bulan);
         view()->share('laporanpengaduan', $laporanpengaduan);
 
         $pdf = PDF::loadview('pages.admin.laporan.rekap-laporan-pengaduan-pdf')->setPaper('a4', 'landscape');

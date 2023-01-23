@@ -11,14 +11,17 @@ class SendEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $status;
+    public $keterangan;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(string $status, string $keterangan)
     {
-        //
+        $this->status = $status;
+        $this->keterangan = $keterangan;
     }
 
     /**
@@ -28,6 +31,8 @@ class SendEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('pages.admin.send-email.index');
+        $status = $this->status;
+        $keterangan = $this->keterangan;
+        return $this->subject($status)->markdown('pages.admin.send-email.index', compact('status', 'keterangan'));
     }
 }

@@ -51,8 +51,6 @@ Route::post('kirim-informasi', [KirimInformasiController::class, 'store'])->name
 Route::get('informasi-status-pengadu-guest', [PantauPengaduController::class, 'infoguest'])->name('informasi-status-pengadu-guest');
 Route::get('informasi-status-pengadu', [PantauPengaduController::class, 'pantaupengaduan'])->name('informasi-status-pengadu');
 
-// Route::get('kirim-email', [EmailController::class, 'index'])->name('kirim-email');
-
 Auth::routes();
 
 Route::prefix('dashboard')->middleware(['auth', 'admin'])->group(function () {
@@ -67,8 +65,6 @@ Route::prefix('dashboard')->middleware(['auth', 'admin'])->group(function () {
     Route::get('cetak-pdf-laporan-pengaduan/{id}', [LaporanAdminController::class, 'cetakpdflaporanpengaduan'])->name('cetak-pdf-laporan-pengaduan');
     Route::post('cari-data-laporan-pengaduan', [LaporanAdminController::class, 'cari'])->name('cari-data-laporan-pengaduan');
     Route::post('cetak-rekap-laporan-pengaduan-pdf', [LaporanAdminController::class, 'cetak_rekeap_laporan_pdf_pdf'])->name('cetak-rekap-laporan-pengaduan-pdf');
-
-    // kirim email
 
     // route informasi pengaudan
     Route::get('data-informasi-pengaduan', [LaporanAdminController::class, 'laporaninformasaipengaduan'])->name('data-informasi-pengaduan');

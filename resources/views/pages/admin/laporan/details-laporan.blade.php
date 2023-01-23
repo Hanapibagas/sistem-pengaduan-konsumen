@@ -48,7 +48,7 @@ Detail Laporan
                             <b>BUKTI-BUTI :</b> <a href="{{ $laporanpengaduan->tentang_diadukan->bukti_bukti }}"><i>{{
                                     $laporanpengaduan->tentang_diadukan->bukti_bukti }}</i></a> <br>
                             <b>BUKTI PEMBELIAN :</b> <br> <img width="50%" height="40%"
-                                src="{{ asset ('storage/'.$laporanpengaduan->tentang_diadukan->bukti_pembelian) }}"
+                                src="{{ asset('storage/'.$laporanpengaduan->tentang_diadukan->bukti_pembelian) }}"
                                 alt="fesfh"><br> <br>
                             <b>MATERIAL :</b> {{ $laporanpengaduan->tentang_diadukan->material }} <br>
                             <b>FISIK :</b> <i>{{ $laporanpengaduan->tentang_diadukan->fisik }}</i> <br>
@@ -70,7 +70,6 @@ Detail Laporan
                                 </option>
                                 <option value="DiTerima">DiTerima</option>
                                 <option value="DiTolak">DiTolak</option>
-                                <option value="Sedang Di Periksa">Sedang Diproses</option>
                             </select>
                         </div>
                         <div class="form-group" id="option2Input" style="display: none;">
