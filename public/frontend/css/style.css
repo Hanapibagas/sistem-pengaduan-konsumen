@@ -601,7 +601,7 @@ a:hover {
 /* --- footer --- */
 .footer {
 	background:#6366f1;
-	padding:15px 22px;
+	/* padding:10px ; */
 }
 
 ul.social-network {

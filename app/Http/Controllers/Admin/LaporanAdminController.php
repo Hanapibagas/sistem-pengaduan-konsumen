@@ -49,13 +49,13 @@ class LaporanAdminController extends Controller
             $data->update([
                 "status" => $request->input('status'),
             ]);
-            Mail::to($data->pengadu->email)->send(new SendEmail($request->status, "Pengaduan diterima!!"));
+            Mail::to($data->pengadu->email)->send(new SendEmail($request->status, "Pengaduan diterima!!", $data->pengadu->nama_lengkap));
         } else {
             $data->update([
                 "status" => $request->input('status'),
                 "keterangan" => $request->input('keterangan'),
             ]);
-            Mail::to($data->pengadu->email)->send(new SendEmail($request->status, $request->keterangan));
+            Mail::to($data->pengadu->email)->send(new SendEmail($request->status, $request->keterangan, $data->pengadu->nama_lengkap));
         }
         return redirect()->route('data-laporan-pengaduan');
     }

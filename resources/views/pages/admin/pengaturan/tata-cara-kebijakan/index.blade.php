@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Daftar Survei
+Pengaturan
 @endsection
 
 @push('add-style')
@@ -12,7 +12,7 @@ Daftar Survei
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">
-            Daftar Survei
+            Setting kebijakan
         </h1>
     </div>
     <div class="row">
@@ -21,21 +21,20 @@ Daftar Survei
                 <table id="myTable" class="table table-stripped">
                     <thead>
                         <tr>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Tanggal</th>
+                            <th>Kebijakan</th>
                             <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ( $survei as $files )
+                        @foreach ( $kebijakan as $file )
                         <tr>
-                            <th>{{ $files->email }}</th>
-                            <th>{{ $files->nama }}</th>
-                            <th>{{ $files->created_at }}</th>
                             <th>
-                                <a href="{{ route('details-survei', $files->id) }}" class="btn btn-info">
-                                    <i class="fa fa-eye"></i>
+                                <img src="{{ asset ('storage/'.$file->kebijakan) }}" alt="" style="width: 150px"
+                                    class="img-thumbnail">
+                            </th>
+                            <th>
+                                <a href="{{ route('edit-kebijakan', $file->id) }}" class="btn btn-info">
+                                    <i class="fa fa-pencil-alt"></i>
                                 </a>
                             </th>
                         </tr>

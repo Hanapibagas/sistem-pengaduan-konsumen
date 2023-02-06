@@ -36,6 +36,14 @@ Profile
     .container .misi p {
         font-size: 17px
     }
+
+    .gambar {
+        margin-bottom: 20px
+    }
+
+    .gambar img {
+        width: 100%
+    }
 </style>
 <div class="tag">
     <h2><b>Visi Misi.</b></h2>
@@ -59,5 +67,9 @@ Profile
             7. Meningkatkan sumberdaya aparatur yang inovatif, profesional dan akuntabel.
         </p>
     </div><br>
+    <div class="gambar">
+        <img class="img" src="{{ asset ('storage/'.$profile->profile) }}" alt="">
+    </div>
 </div>
+
 @endsection

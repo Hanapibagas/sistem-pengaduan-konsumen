@@ -33,7 +33,7 @@
                         <li role="presentation"><a href="{{ route('kirim-pengadu') }}">Pengaduan</a></li>
                         @endauth
 
-                        <li role="presentation"><a href="contact.html">Kontak</a></li>
+                        <li role="presentation"><a target="_blank" href="https://wa.me/6281234506967">Kontak</a></li>
 
                         @guest
                         <li role="presentation"><a href="{{ route('login') }}">Login</a></li>
