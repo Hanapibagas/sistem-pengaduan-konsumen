@@ -37,15 +37,6 @@ Data Diri
 <div class="r-bg-x pb120">
     <div class="container w-992">
         <div class="blog-details">
-            @if ( $errors->any() )
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ( $errors->all() as $error )
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
             <section class="contact">
                 <div class="container" style="width: 100%; margin-left: -10px">
                     <div class="panel panel-default" style="border-color: #99b8c4;">
@@ -65,14 +56,16 @@ Data Diri
                                         </div>
                                         <div class="panel-body" style="padding-left: 0;">
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <label for="nama_lengkap" class="col-md-4 col-sm-4">Nama Lengkap</label>
+                                                <label for="nama_lengkap" class="col-md-4 col-sm-4">Nama Lengkap <i
+                                                        class="text-danger" style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <input name="nama_lengkap" type="text" class="form-control input-sm"
                                                         id="nama_lengkap" placeholder="Nama lengkap" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <label for="umur" class="col-md-4 col-sm-4">Umur</label>
+                                                <label for="umur" class="col-md-4 col-sm-4">Umur <i class="text-danger"
+                                                        style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <input name="umur" type="text" class="form-control input-sm"
                                                         id="nama_lengkap" placeholder="Umur" value="">
@@ -80,7 +73,8 @@ Data Diri
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
                                                 <label for="jenis_kelamin" class="col-md-4 col-sm-4">Jenis
-                                                    Kelamin</label>
+                                                    Kelamin <i class="text-danger"
+                                                        style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <select name="jenis_kelamin" class="form-control input-sm select2">
                                                         <option value="Laki-laki">Laki-laki</option>
@@ -89,7 +83,8 @@ Data Diri
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <label for="email" class="col-md-4 col-sm-4">E-Mail</label>
+                                                <label for="email" class="col-md-4 col-sm-4">E-Mail <i
+                                                        class="text-danger" style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <input name="email" type="email" class="form-control input-sm"
                                                         id="email" placeholder="Email">
@@ -97,7 +92,8 @@ Data Diri
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
                                                 <label for="telepon" class="col-md-4 col-sm-4">Telpon
-                                                    (<i>Whatsapp</i>)</label>
+                                                    (<i>Whatsapp</i>) <i class="text-danger"
+                                                        style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <input name="telpon" type="number" class="form-control input-sm"
                                                         id="telpon" placeholder="Telpon / hp">
@@ -105,7 +101,8 @@ Data Diri
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
                                                 <label for="no_identitas" class="col-md-4 col-sm-4">No Identitas
-                                                    (KTP/SIM/Paspor)</label>
+                                                    (KTP/SIM/Paspor) <i class="text-danger"
+                                                        style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <input name="no_identitas" type="number"
                                                         class="form-control input-sm" id="no_identitas"
@@ -113,7 +110,8 @@ Data Diri
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <label for="alamat" class="col-md-4 col-sm-4">Alamat Lengkap</label>
+                                                <label for="alamat" class="col-md-4 col-sm-4">Alamat Lengkap <i
+                                                        class="text-danger" style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <textarea name="alamat" rows="3" class="form-control"
                                                         placeholder="Alamat"></textarea>
@@ -137,11 +135,12 @@ Data Diri
                                                 <div class="col-md-8 col-sm-8">
                                                     <input name="nama_pelaku_usaha" type="text"
                                                         class="form-control input-sm" id="nama_pelaku_usaha"
-                                                        placeholder="" value="">
+                                                        placeholder="( BERI TANDA - JIKA TIDAK MENGETAHUI )" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <label for="perusahaan" class="col-md-4 col-sm-4">Perusahaan</label>
+                                                <label for="perusahaan" class="col-md-4 col-sm-4">Perusahaan <i
+                                                        class="text-danger" style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <input name="perusahaan" type="text" class="form-control input-sm"
                                                         id="perusahaan" placeholder="" value="">
@@ -151,18 +150,13 @@ Data Diri
                                                 <label for="kode_pos" class="col-md-4 col-sm-4">Kode pos</label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <input name="kode_pos" type="text" class="form-control input-sm"
-                                                        id="kode_pos" placeholder="" value="">
+                                                        id="kode_pos"
+                                                        placeholder="( BERI TANDA - JIKA TIDAK MENGETAHUI )" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <label for="telepon" class="col-md-4 col-sm-4">Telpon / HP</label>
-                                                <div class="col-md-8 col-sm-8">
-                                                    <input name="telepon" type="text" class="form-control input-sm"
-                                                        id="telpon_diadu" placeholder="Telpon / hp">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-12 col-sm-12">
-                                                <label for="alamat" class="col-md-4 col-sm-4">Alamat</label>
+                                                <label for="alamat" class="col-md-4 col-sm-4">Alamat perusahaan <i
+                                                        class="text-danger" style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <textarea name="alamat" rows="3" class="form-control"
                                                         placeholder="Alamat"></textarea>
@@ -181,7 +175,8 @@ Data Diri
                                         </div>
                                         <div class="panel-body" style="padding-left: 0;">
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <label for="jenis_produk" class="col-md-4 col-sm-4">Jenis Produk</label>
+                                                <label for="jenis_produk" class="col-md-4 col-sm-4">Jenis Produk <i
+                                                        class="text-danger" style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <select class="form-control select2" style="width: 100%;"
                                                         id="jenis_barang_jasa" name="jenis_produk"
@@ -193,7 +188,8 @@ Data Diri
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <label for="name" class="col-md-4 col-sm-4">Merk Dagang</label>
+                                                <label for="name" class="col-md-4 col-sm-4">Merk Dagang <i
+                                                        class="text-danger" style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <input name="merek_dagang" type="text" class="form-control input-sm"
                                                         id="merk_dagang" placeholder="">
@@ -207,7 +203,8 @@ Data Diri
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <label for="name" class="col-md-4 col-sm-4">Jenis Pengaduan</label>
+                                                <label for="name" class="col-md-4 col-sm-4">Jenis Pengaduan <i
+                                                        class="text-danger" style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <select class="form-control select2" style="width: 100%;"
                                                         id="jenis_pengaduan" name="jenis_pengaduan"
@@ -222,7 +219,6 @@ Data Diri
                                                         <option value="Pengiklanan / Promosi">Pengiklanan / Promosi
                                                         </option>
                                                         <option value="Klausula Baku">Klausula Baku</option>
-                                                        <option value="Lain-lain">Lain-lain</option>
                                                         <option value="Komposisi bahan dan makanan">Komposisi bahan dan
                                                             makanan</option>
                                                         <option value="Minuman">Minuman</option>
@@ -236,11 +232,13 @@ Data Diri
                                                             barang dalam keadaan terbungkus</option>
                                                         <option value="Penulisan satuan ukuran">Penulisan satuan ukuran
                                                         </option>
+                                                        <option value="Lain-lain">Lain-lain jika tidak mengerti</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <label for="name" class="col-md-4 col-sm-4">Saksi</label>
+                                                <label for="name" class="col-md-4 col-sm-4">Saksi <i class="text-danger"
+                                                        style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <select class="form-control select2" style="width: 100%;" id="saksi"
                                                         name="saksi"
@@ -254,7 +252,8 @@ Data Diri
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
                                                 <label for="name" class="col-md-4 col-sm-4">Saat Kejadian Ditemukan
-                                                    (Tanggal / Jam / Lokasi)</label>
+                                                    (Tanggal / Jam / Lokasi) <i class="text-danger"
+                                                        style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-2 col-sm-2">
                                                     <input name="tanggal" type="date" class="" id="saat_kejadian"
                                                         placeholder="Tanggal Kejadian" title="Tanggal Kejadian">
@@ -269,7 +268,8 @@ Data Diri
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
-                                                <label for="name" class="col-md-4 col-sm-4">Bukti-Bukti</label>
+                                                <label for="name" class="col-md-4 col-sm-4">Bukti-Bukti <i
+                                                        class="text-danger" style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <input name="bukti_bukti" type="text" class="form-control input-sm"
                                                         id="merk_dagang" placeholder="https://drive.google.com/CONTOH">
@@ -277,7 +277,8 @@ Data Diri
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
                                                 <label for="bukti_pembelian" class="col-md-4 col-sm-4">Bukti
-                                                    Pembelian</label>
+                                                    Pembelian <i class="text-danger"
+                                                        style="font-size: 14px;">*</i></label>
                                                 <div class="col-md-8 col-sm-8">
                                                     <input type="file" class="form-control input-sm"
                                                         name="bukti_pembelian">
@@ -288,7 +289,8 @@ Data Diri
                                                 <label for="name" class="col-md-2 col-sm-2">Material</label>
                                                 <div class="col-md-4 col-sm-4 ">
                                                     <input name="material" class="form-control input-sm" type="text"
-                                                        id="material" placeholder="">
+                                                        id="material"
+                                                        placeholder="( BERI TANDA - JIKA TIDAK MENGETAHUI )">
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12 col-sm-12">
@@ -296,7 +298,7 @@ Data Diri
                                                 <label for="name" class="col-md-2 col-sm-2">Fisik</label>
                                                 <div class="col-md-4 col-sm-4 ">
                                                     <input name="fisik" class="form-control input-sm" type="text"
-                                                        id="fisik" placeholder="">
+                                                        id="fisik" placeholder="( BERI TANDA - JIKA TIDAK MENGETAHUI )">
                                                 </div>
                                             </div>
                                         </div>
@@ -307,7 +309,8 @@ Data Diri
                                     <div class="panel panel-default" style="border-color: #99b8c4;">
                                         <div class="panel-heading"
                                             style="background-color: transparent; line-height: 1em;">
-                                            <h5>IV. JENIS TUNTUTAN</h5><br>
+                                            <h5>IV. JENIS TUNTUTAN <i class="text-danger" style="font-size: 14px;">*</i>
+                                            </h5><br>
                                         </div>
                                         <div class="panel-body" style="padding-left: 0;">
                                             <div class="form-group col-md-12 col-sm-12">
@@ -336,7 +339,8 @@ Data Diri
                                     <div class="panel panel-default" style="border-color: #99b8c4;">
                                         <div class="panel-heading"
                                             style="background-color: transparent; line-height: 1em;">
-                                            <h5>V. KRONOLOGIS PENGADUAN</h5><br>
+                                            <h5>V. KRONOLOGIS PENGADUAN <i class="text-danger"
+                                                    style="font-size: 14px;">*</i></h5><br>
                                         </div>
                                         <div class="panel-body" style="padding-left: 0;padding-right: 0;">
                                             <div class="form-group col-md-12 col-sm-12">
@@ -352,7 +356,8 @@ Data Diri
                                     <div class="panel panel-default" style="border-color: #99b8c4;">
                                         <div class="panel-heading"
                                             style="background-color: transparent; line-height: 1em;">
-                                            <h5>VI. PERMINTAAN KONSUMEN</h5><br>
+                                            <h5>VI. PERMINTAAN KONSUMEN <i class="text-danger"
+                                                    style="font-size: 14px;">*</i></h5><br>
                                         </div>
                                         <div class="panel-body" style="padding-left: 0;padding-right: 0;">
                                             <div class="form-group col-md-12 col-sm-12">

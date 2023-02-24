@@ -15,11 +15,10 @@ class CreateIdentitasPelakuUsahasTable extends Migration
     {
         Schema::create('identitas_pelaku_usahas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_pelaku_usaha');
+            $table->string('nama_pelaku_usaha')->nullable();
             $table->text('perusahaan');
-            $table->text('kode_pos');
+            $table->text('kode_pos')->nullable();
             $table->text('alamat');
-            $table->bigInteger('telepon');
             $table->timestamps();
         });
     }

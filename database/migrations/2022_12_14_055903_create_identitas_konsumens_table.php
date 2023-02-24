@@ -21,7 +21,7 @@ class CreateIdentitasKonsumensTable extends Migration
             $table->string('jenis_kelamin');
             $table->text('alamat');
             $table->string('email');
-            $table->bigInteger('telepon');
+            $table->bigInteger('telpon');
             $table->timestamps();
         });
     }

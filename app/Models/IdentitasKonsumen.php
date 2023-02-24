@@ -14,7 +14,7 @@ class IdentitasKonsumen extends Model
         'umur',
         'jenis_kelamin',
         'email',
-        'telepon',
+        'telpon',
         'no_identitas',
         'alamat',
     ];

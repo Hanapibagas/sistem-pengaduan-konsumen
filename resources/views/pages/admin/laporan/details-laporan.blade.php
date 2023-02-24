@@ -27,7 +27,7 @@ Detail Laporan
                                 <b>JENIS KELAMIN :</b> <i>{{ $laporanpengaduan->pengadu->jenis_kelamin }}</i> <br>
                                 <b>ALAMAT :</b> <i>{{ $laporanpengaduan->pengadu->alamat }}</i> <br>
                                 <b>EMAIL :</b> <i>{{ $laporanpengaduan->pengadu->email }}</i> <br>
-                                <b>TELEPON (Whatsapp) :</b> <i>{{ $laporanpengaduan->pengadu->telepon }}</i> <br>
+                                <b>TELEPON (Whatsapp) :</b> <i>{{ $laporanpengaduan->pengadu->telpon }}</i> <br>
                             </div>
                             <div style="margin-top: -20px" class="mb-5">
                                 <b>NAMA PELAKU USAHA :</b><i>{{ $laporanpengaduan->diadukan->nama_pelaku_usaha

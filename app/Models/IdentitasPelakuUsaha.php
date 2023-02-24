@@ -14,6 +14,5 @@ class IdentitasPelakuUsaha extends Model
         'perusahaan',
         'kode_pos',
         'alamat',
-        'telepon',
     ];
 }

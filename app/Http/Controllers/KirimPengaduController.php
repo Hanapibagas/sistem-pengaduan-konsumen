@@ -54,7 +54,7 @@ class KirimPengaduController extends Controller
             "jenis_kelamin" => $request->input('jenis_kelamin'),
             "alamat" => $request->input('alamat'),
             "email" => $request->input('email'),
-            "telepon" => $request->input('telepon'),
+            "telpon" => $request->input('telpon'),
         ]);
 
         $diadukan = IdentitasPelakuUsaha::create([
@@ -62,7 +62,6 @@ class KirimPengaduController extends Controller
             "perusahaan" => $request->input('perusahaan'),
             "kode_pos" => $request->input('kode_pos'),
             "alamat" => $request->input('alamat'),
-            "telepon" => $request->input('telepon'),
         ]);
 
         $jenistuntuta = JenisTutan::create([
