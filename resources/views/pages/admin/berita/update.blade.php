@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Berita
+Berita
 @endsection
 
 
@@ -12,18 +12,17 @@
     </div>
 
     @if ( $errors->any() )
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ( $errors->all() as $error )
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ( $errors->all() as $error )
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
 
     <div class="card shadow">
         <div class="card-body">
-            <form action="{{ route('berita-admin.update', $berita->id) }}" method="post"  enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
@@ -43,7 +42,8 @@
                     <small>Pilih gambar jika ingin mengubah</small>
                     <input value="{{ $berita->gambar }}" type="file" class="form-control" name="gambar">
                     @if ($berita->gambar)
-                    <img class="mt-3" width="100px" height="100px" src="{{ asset ('storage/'.$berita->gambar) }}" alt="fesfh">
+                    <img class="mt-3" width="100px" height="100px" src="{{ asset ('storage/'.$berita->gambar) }}"
+                        alt="fesfh">
                     @else
                     <p>Gambar tidak tersedia</p>
                     @endif
@@ -51,7 +51,7 @@
                 <button type="submit" class="btn btn-primary btn-block">
                     Update
                 </button>
-        </form>
+            </form>
         </div>
     </div>
 </div>

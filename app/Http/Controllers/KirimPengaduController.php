@@ -26,7 +26,31 @@ class KirimPengaduController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
+        $this->validate($request, [
+            'nama_lengkap' => 'required|string',
+            'umur' => 'required|string',
+            'no_identitas' => 'required|string',
+            'jenis_kelamin' => 'required|string',
+            'alamat' => 'required|string',
+            'email' => 'required|string',
+            'telpon' => 'required|string',
+
+            'perusahaan'  => 'required|string',
+            'alamat' => 'required|string',
+
+            'jenis_produk'  => 'required|string',
+            'merek_dagang'  => 'required|string',
+            'jenis_pengaduan'  => 'required|string',
+            'saksi'  => 'required|string',
+            'tanggal'  => 'required|string',
+            'lokasi'  => 'required|string',
+            'bukti_bukti'  => 'required|string',
+            'bukti_pembelian'  => 'required',
+
+            'kronologis'  => 'required|string',
+            'permintaan'  => 'required|string',
+        ]);
+
         if ($request->file('bukti_pembelian')) {
             $file = $request->file('bukti_pembelian')->store('tentang-pengadu', 'public');
         }
