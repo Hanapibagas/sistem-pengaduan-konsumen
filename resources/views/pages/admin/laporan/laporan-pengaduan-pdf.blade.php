@@ -2,7 +2,7 @@
     <div style="margin-top: 0px">
         <img src="{{('frontend/images/logo.png') }}" style="width: 50px; margin-left: 330px; margin-top: 10px" alt=""
             srcset="">
-        <h4 style="text-align: center; margin-top: 5px">PEMERINTAH PROPINSI SELAWESI SELATAN</h4>
+        <h4 style="text-align: center; margin-top: 5px">PEMERINTAH PROVINSI SELAWESI SELATAN</h4>
         <h2 style="text-align: center; margin-top: -23px"><b>DINAS PERDAGANGAN</b></h2>
         <p style="text-align: center; margin-top: -23px">jl.Manunggal 22 No. 40 Maccini Sombala, Tamalate
             Telp.0411-8917345 Makassar 90224</p>

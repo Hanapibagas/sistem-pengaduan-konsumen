@@ -533,7 +533,7 @@ a {text-decoration: none;}
                                                                         style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:georgia, times, 'times new roman', serif;font-size:30px;font-style:normal;font-weight:normal;color:#023047">
                                                                         <span
                                                                             style="font-size:25px;line-height:30px">PEMERINTAH
-                                                                            PROPINSI SELAWESI SELATAN</span><br><span
+                                                                            PROVINSI SELAWESI SELATAN</span><br><span
                                                                             style="font-size:26px;line-height:31px">DINAS
                                                                             PERDAGANGAN</span>
                                                                     </h1>
