@@ -23,7 +23,7 @@ class CreateLaporansTable extends Migration
             $table->foreignId('jenis_tuntutan_id');
             $table->foreignId('permintaan_id');
             $table->string('status')->default('Sedang Di Proses');
-            $table->longText('keterangan')->default('-');
+            $table->longText('keterangan')->default(null);
             $table->timestamps();
         });
     }
