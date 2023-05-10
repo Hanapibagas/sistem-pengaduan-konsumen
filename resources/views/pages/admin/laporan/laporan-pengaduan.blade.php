@@ -104,8 +104,8 @@ Daftar Laporan Pengaduan
             <div class="row">
                 @csrf
                 <div class="form-group col-md-2">
-                    <select id="inputState" class="form-control" name="bulan">
-                        <option selected>Bulan...</option>
+                        <select id="inputState" class="form-control" name="bulan">
+                            <option selected>Bulan...</option>
                         <option value="01">Januari</option>
                         <option value="02">Februari</option>
                         <option value="03">Maret</option>

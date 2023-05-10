@@ -54,14 +54,13 @@
             <span>Survei</span></a>
     </li>
 
-    {{--
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('pengguna-akun') }}">
             <i class="fas fa-fw fa-user"></i>
             <span>Akun pengguna</span></a>
-    </li> --}}
+    </li>
 
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
